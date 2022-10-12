@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px;
+  height: 300px; 
+  margin: 10px;
+}
+
+body{
+  background-color: lightblue;
+}
+
+a {
+  color: black;
+}
+
+input { 
+  margin-bottom: 10px; 
+}
+
+</style>
+<title>League Teams Home Page</title>
+</head>
+<body>
+<h1 style = "text-align: center;">Welcome to the League Teams Home Page</h1>
+
+<div class="row">
+  <div class="column" style="background-color: white;">
+    <h2>Add a player</h2>
+	<form action="addPlayerServlet" method="post">
+	Name: <input type="text" name = "name"><br />
+	Number: <input type="text" name="number"><br />
+	Start Date: <input type="text" name="startdate"><br />
+	<input type = "submit" value="Add Player">
+</form>
+  </div>
+  
+  <div class="column" style="background-color: white;">
+    <h2>Add a team</h2>
+	<form action="addTeamServlet" method="post">
+	Name: <input type="text" name = "name">
+	<input type = "submit" value="Add Team">
+	</form>
+  </div>
+</div>
+
+
+<a href = "viewAllPlayersServlet">View the complete player list</a><br />
+<a href = "viewAllTeamsServlet">View the complete team list</a><br />
+<a href = "viewAllTeamListsServlet">View the complete teams with players list</a><br />
+</body>
+</html>

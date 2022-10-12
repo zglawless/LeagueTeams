@@ -25,6 +25,12 @@ public class Players {
 	public Players() {
 
 	}
+	
+	public Players(String name, int number, LocalDate startDate) {
+		this.name = name;
+		this.number = number;
+		this.startDate = startDate;
+	}
 
 	public Players(int id, String name, int number, LocalDate startDate) {
 		this.id = id;

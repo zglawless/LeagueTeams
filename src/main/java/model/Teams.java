@@ -17,7 +17,12 @@ public class Teams {
 	private String teamName;
 	
 	public Teams() {
-
+	super();
+	}
+	
+	public Teams(String teamName) {
+		super();
+		this.teamName = teamName;
 	}
 
 	public Teams(int id, String teamName) {
