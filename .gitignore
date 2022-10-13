@@ -2,3 +2,4 @@
 .project
 .xml
 !pom.xml
+/target/

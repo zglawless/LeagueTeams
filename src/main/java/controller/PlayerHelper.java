@@ -30,7 +30,7 @@ public class PlayerHelper {
 	public void deletePlayer (Players toDelete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Players> typedQuery = em.createQuery("select p from Players p where p.name = :selectedName and p.number = :selectedNumber and p.startdate = :selectedStartDate", Players.class);
+		TypedQuery<Players> typedQuery = em.createQuery("select p from Players p where p.name = :selectedName and p.number = :selectedNumber and p.startDate = :selectedStartDate", Players.class);
 		typedQuery.setParameter("selectedName", toDelete.getName());
 		typedQuery.setParameter("selectedNumber", toDelete.getNumber());
 		typedQuery.setParameter("selectedStartDate", toDelete.getStartDate());

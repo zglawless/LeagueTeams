@@ -8,7 +8,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import model.Players;
 import model.Teams;
 
 public class TeamHelper {
@@ -64,5 +63,17 @@ public class TeamHelper {
 		em.getTransaction().commit();
 		em.close();
 		
+	}
+	
+	public void deleteTeam (Teams toDelete) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<Teams> typedQuery = em.createQuery("select t from Teams t where t.teamName = :selectedName", Teams.class);
+		typedQuery.setParameter("selectedName", toDelete.getTeamName());
+		typedQuery.setMaxResults(1);
+		Teams result = typedQuery.getSingleResult();
+		em.remove(result);
+		em.getTransaction().commit();
+		em.close();
 	}
 }

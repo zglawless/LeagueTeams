@@ -38,7 +38,7 @@ public class EditPlayerServlet extends HttpServlet {
 		Integer tempId = Integer.parseInt(request.getParameter("id"));
 		
 		LocalDate startDate = LocalDate.parse(stringStartDate);
-		int number = Integer.parseInt(stringStartDate);
+		int number = Integer.parseInt(stringNumber);
 		
 		Players playerToUpdate = ph.searchForPlayerById(tempId);
 		playerToUpdate.setName(name);
