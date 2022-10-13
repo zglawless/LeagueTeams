@@ -8,6 +8,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import model.Players;
 import model.Teams;
 
 public class TeamHelper {
@@ -45,5 +46,23 @@ public class TeamHelper {
 		em.close();
 		
 		return foundTeam;
+	}
+	
+	public Teams searchForTeamById(int idToEdit) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		Teams found = em.find(Teams.class, idToEdit);
+		em.close();
+
+		return found;
+	}
+	
+	public void updateTeam(Teams toEdit) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		em.merge(toEdit);
+		em.getTransaction().commit();
+		em.close();
+		
 	}
 }
