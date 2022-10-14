@@ -5,29 +5,65 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Edit an existing roster</title>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+.row {
+	display: flex;
+}
+
+.column {
+	flex: 50%;
+	padding: 10px;
+	height: 300px;
+	margin: 10px;
+}
+
+body {
+	background-color: lightblue;
+}
+
+a {
+	color: black;
+}
+
+input {
+	margin-bottom: 10px;
+}
+
+
+</style>
+<title>Edit an Existing Roster</title>
 </head>
 <body>
-<form action="editRosterDetailsServlet" method="post">
-<input type="hidden" name="id" value="${rosterToEdit.id}">
-Roster Name: <input type="text" name="rosterName" value="${rosterToEdit.rosterName}"><br />
+<h1 style="text-align: center;">Edit an Existing Roster</h1>
 
-Start Date: <input type="text" name="month" placeholder="mm" size="4" value="${month}">
-<input type="text" name="day" placeholder="dd" size="4" value="${date}">
-<input type="text" name="year" placeholder="yyyy" size="4" value="${year}">
+<div class="row">
+	<div class="column" style="background-color: white;">
+		<form action="editRosterDetailsServlet" method="post">
+			<input type="hidden" name="id" value="${rosterToEdit.id}">
+			Roster Name: <input type="text" name="rosterName" value="${rosterToEdit.rosterName}"><br />
 
-Team Name: <input type="text" name="teamName" value="${rosterToEdit.teams.teamName}"><br />
+			Start Date: <input type="text" name="month" placeholder="mm" size="4" value="${month}">
+			<input type="text" name="day" placeholder="dd" size="4" value="${date}">
+			<input type="text" name="year" placeholder="yyyy" size="4" value="${year}">
 
-Available Players:<br />
+			Team Name: <input type="text" name="teamName" value="${rosterToEdit.teams.teamName}"><br />
 
-<select name="allPlayersToAdd" multiple size="6">
-<c:forEach items="${requestScope.allPlayers}" var="currentplayer">
-	<option value="${currentplayer.id}">${currentplayer.name}</option>
-</c:forEach>
-</select>
-<br />
-<input type="submit" value="Edit Roster and Add Players">
-</form>
+			Available Players:<br />
+
+			<select name="allPlayersToAdd" multiple size="6">
+			<c:forEach items="${requestScope.allPlayers}" var="currentplayer">
+				<option value="${currentplayer.id}">${currentplayer.name}</option>
+			</c:forEach>
+			</select>
+			<br />
+			<input type="submit" value="Edit Roster and Add Players">
+		</form>
+	</div>
+</div>
 <a href="index.html">Go add new players/teams instead</a>
 </body>
 </html>
