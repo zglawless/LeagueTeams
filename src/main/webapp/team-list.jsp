@@ -27,6 +27,7 @@ body {
 
 a {
 	color: black;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 input {
