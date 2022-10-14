@@ -54,7 +54,7 @@ input {
 
 			Available Players:<br />
 
-			<select name="allPlayersToAdd" multiple size="6">
+			<select style="width: 100px;" name="allPlayersToAdd" multiple size="6">
 			<c:forEach items="${requestScope.allPlayers}" var="currentplayer">
 				<option value="${currentplayer.id}">${currentplayer.name}</option>
 			</c:forEach>

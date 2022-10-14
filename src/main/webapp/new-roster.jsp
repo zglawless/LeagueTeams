@@ -49,9 +49,9 @@ input {
 			Team Name: <input type="text" name="teamName"><br />
 
 			Available Players:<br />
-			<select name="allPlayersToAdd" multiple size="6">
+			<select style="width: 100px;" name="allPlayersToAdd" multiple size="6">
 				<c:forEach items="${requestScope.allPlayers}" var="currentplayer">
-					<option value="${currentplayer.id}">${currentPlayer.name}</option>
+					<option style="color: black" value="${currentplayer.id}">${currentPlayer.name}</option>
 				</c:forEach>
 			</select>
 			<br />
