@@ -4,13 +4,48 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+.row {
+	display: flex;
+}
+
+.column {
+	flex: 50%;
+	padding: 10px;
+	height: 300px;
+	margin: 10px;
+}
+
+body {
+	background-color: lightblue;
+}
+
+a {
+	color: black;
+}
+
+input {
+	margin-bottom: 10px;
+}
+
+</style>
+<title>Edit a Team</title>
 </head>
 <body>
-<form action = "editTeamServlet" method="post">
-Name: <input type = "text" name = "name" value = "${teamToEdit.teamName}">
-<input type = "hidden" name = "id" value = "${teamToEdit.id}">
-<input type="submit" value = "Save Edited Item">
-</form>
+<h1 style="text-align: center;">Edit a Team</h1>
+
+<div class="row">
+	<div class="column" style="background-color: white;">
+		<form action = "editTeamServlet" method="post">
+			Name: <input type = "text" name = "name" value = "${teamToEdit.teamName}">
+			<input type = "hidden" name = "id" value = "${teamToEdit.id}">
+			<input type="submit" value = "Save Edited Item">
+		</form>
+	</div>
+</div>
 </body>
 </html>
