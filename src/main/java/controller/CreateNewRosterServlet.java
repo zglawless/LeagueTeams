@@ -18,7 +18,7 @@ import model.Teams;
 /**
  * Servlet implementation class CreateNewRosterServlet
  */
-@WebServlet("/CreateNewRosterServlet")
+@WebServlet("/createNewRosterServlet")
 public class CreateNewRosterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
